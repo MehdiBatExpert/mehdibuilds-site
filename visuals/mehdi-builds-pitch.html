@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MehdiBuilds - Agent IA & automatisation B2B | VibeCraft Agency</title>
+  <meta name="description" content="Builder IA par méthode. Agents autonomes, stack souveraine RGPD-native, prospection B2B automatisée. Fondateur VibeCraft Agency. Paris 2026." />
+  <link rel="canonical" href="https://mehdibuilds.pages.dev/" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://mehdibuilds.pages.dev/" />
+  <meta property="og:locale"      content="fr_FR" />
+  <meta property="og:site_name"   content="MehdiBuilds" />
+  <meta property="og:title"       content="MehdiBuilds - Agent IA & automatisation B2B" />
+  <meta property="og:description" content="Builder IA par méthode. Agents autonomes, stack souveraine RGPD-native, prospection B2B automatisée. Fondateur VibeCraft Agency. Paris 2026." />
+  <meta property="og:image"       content="https://mehdibuilds.pages.dev/assets/mehdi-portrait.jpg" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt"   content="Mehdi Derradji - MehdiBuilds" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@MehdiBuilds" />
+  <meta name="twitter:creator"     content="@MehdiBuilds" />
+  <meta name="twitter:title"       content="MehdiBuilds - Agent IA & automatisation B2B" />
+  <meta name="twitter:description" content="Builder IA par méthode. Agents autonomes, stack souveraine RGPD-native, prospection B2B automatisée. Fondateur VibeCraft Agency." />
+  <meta name="twitter:image"       content="https://mehdibuilds.pages.dev/assets/mehdi-portrait.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://mehdibuilds.pages.dev/#mehdi",
+        "name": "Mehdi Derradji",
+        "url": "https://mehdibuilds.pages.dev",
+        "image": "https://mehdibuilds.pages.dev/assets/mehdi-portrait.jpg",
+        "jobTitle": "Builder IA & Fondateur VibeCraft Agency",
+        "description": "Builder IA par méthode. Agents autonomes, stack souveraine RGPD-native, prospection B2B automatisée.",
+        "sameAs": [
+          "https://twitter.com/MehdiBuilds",
+          "https://twitter.com/VibeCraftAgent"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "VibeCraft Agency",
+          "url": "https://vibecraft.ai"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://mehdibuilds.pages.dev/#website",
+        "url": "https://mehdibuilds.pages.dev",
+        "name": "MehdiBuilds",
+        "description": "Builder IA par méthode. Agents autonomes, stack souveraine RGPD-native.",
+        "author": { "@id": "https://mehdibuilds.pages.dev/#mehdi" },
+        "inLanguage": "fr-FR"
+      }
+    ]
+  }
+  </script>
+  <!-- diagram-meta:start -->
+  <meta name="diagram:title"     content="MehdiBuilds - Builder IA par methode">
+  <meta name="diagram:date"      content="2026-05-27">
+  <meta name="diagram:category"  content="brand">
+  <meta name="diagram:cat-label" content="Brand">
+  <meta name="diagram:color"     content="blue">
+  <meta name="diagram:badges"    content="latest">
+  <!-- diagram-meta:end -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    /* === TOKENS === */
+    :root {
+      --bg:            #F8F6F2;
+      --surface:       #EFECE6;
+      --surface2:      #E7E3DC;
+      --border:        #DDD8CF;
+      --border-bright: #CAC4BB;
+      --text:          #0A0C0F;
+      --text-muted:    #2E4157;
+      --text-dim:      #7A7670;
+      --indigo:        #3B4FD8;
+      --indigo-dim:    rgba(59,79,216,0.08);
+      --gold:          #AA8508;
+      --gold-dim:      rgba(170,133,8,0.10);
+      --shadow:        0 2px 12px rgba(0,0,0,0.07);
+      --shadow-sm:     0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    /* === RESET === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+
+    /* === BASE === */
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.1;
+    }
+    p { color: var(--text-muted); margin-bottom: 1rem; line-height: 1.75; font-size: 1rem; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* === REVEAL ANIMATION === */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease-out, transform 0.55s ease-out; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+    /* === PROGRESS BAR === */
+    #progress { position: fixed; top: 0; left: 0; height: 2px; background: var(--gold); width: 0%; z-index: 200; transition: width 0.08s linear; }
+
+    /* === FIXED NAV === */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(248,246,242,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2.5rem;
+    }
+    .nav-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 800;
+      color: var(--text); letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 0;
+    }
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.64rem; font-weight: 500;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      color: var(--text-dim);
+      padding: 0 0.875rem; height: 64px;
+      display: inline-flex; align-items: center;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--indigo); border-color: var(--indigo); }
+    .nav-cta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      background: #0A0C0F; color: #F3EFE7;
+      padding: 0.5rem 1.125rem;
+      border-radius: 4px;
+      border: none; cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { opacity: 0.80; }
+
+    /* === PAGE BODY === */
+    .page-body { padding-top: 64px; }
+
+    /* === SECTION WRAPPER === */
+    .section-wrap {
+      max-width: 940px; margin: 0 auto;
+      padding: 6.5rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-wrap:last-of-type { border-bottom: none; }
+
+    /* === SECTION HEADER ELEMENTS === */
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--indigo);
+      margin-bottom: 1.25rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .section-label::before { content: none; }
+    .section-title {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: clamp(1.875rem, 4vw, 2.75rem);
+      font-weight: 700; color: var(--text);
+      letter-spacing: -0.03em; line-height: 1.08;
+      margin-bottom: 0.625rem;
+    }
+    .section-subtitle {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 1.125rem; font-weight: 500;
+      font-style: italic; color: var(--gold);
+      margin-bottom: 2.5rem; line-height: 1.4;
+    }
+    .section-sub-mono {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem; color: var(--text-muted);
+      letter-spacing: 0.04em; margin-bottom: 2.5rem;
+    }
+
+    /* === HERO === */
+    .hero-section {
+      min-height: calc(100vh - 56px);
+      display: flex; align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding: 5rem 2.5rem;
+      max-width: 940px; margin: 0 auto;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 60fr 40fr;
+      gap: 5rem; align-items: center; width: 100%;
+    }
+    .hero-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--indigo); margin-bottom: 1.75rem;
+      display: flex; align-items: center; gap: 0.625rem;
+    }
+    .hero-eyebrow::before { content: none; }
+    .hero-name {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: clamp(3rem, 6.5vw, 5.25rem);
+      font-weight: 700; color: var(--text);
+      letter-spacing: -0.035em; line-height: 0.95;
+      margin-bottom: 0.5rem;
+    }
+    .hero-tagline-italic {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.625rem, 3.25vw, 2.5rem);
+      font-weight: 600; font-style: italic;
+      color: var(--gold); line-height: 1.15;
+      margin-bottom: 1.75rem;
+    }
+    .hero-body {
+      font-size: 1.0625rem; color: var(--text-muted);
+      line-height: 1.75; max-width: 480px;
+      margin-bottom: 2.25rem;
+    }
+    .hero-btns {
+      display: flex; align-items: center; gap: 1.25rem;
+      margin-bottom: 2rem; flex-wrap: wrap;
+    }
+    .btn-gold {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      background: var(--gold); color: var(--text);
+      padding: 0.75rem 1.625rem; border-radius: 3px;
+      text-decoration: none; transition: opacity 0.15s;
+      display: inline-block;
+    }
+    .btn-gold:hover { opacity: 0.82; }
+    .btn-text-indigo {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--indigo);
+      text-decoration: underline; text-underline-offset: 3px;
+      transition: opacity 0.15s;
+    }
+    .btn-text-indigo:hover { opacity: 0.75; }
+    .hero-badges {
+      display: flex; gap: 0.5rem; flex-wrap: wrap;
+    }
+    .hero-badge {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--border-bright);
+      color: var(--text-dim); border-radius: 2px;
+    }
+    .hero-photo-wrap { position: relative; }
+    .hero-photo {
+      width: 100%; aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: var(--shadow);
+      display: block;
+    }
+    .hero-photo-caption {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.64rem; color: var(--text-dim);
+      letter-spacing: 0.08em;
+      margin-top: 0.875rem; text-align: center;
+    }
+
+    /* === QUI - BAB GRID === */
+    .bab-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 2.5rem;
+    }
+    .bab-card {
+      background: var(--bg); padding: 2rem 1.75rem;
+    }
+    .bab-card-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 1.125rem;
+    }
+    .bab-card-label.is-bridge { color: var(--indigo); }
+    .bab-card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--text); margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    .bab-list {
+      list-style: none; padding: 0; margin: 0;
+    }
+    .bab-list li {
+      font-size: 1rem; color: var(--text-muted);
+      padding: 0.4rem 0;
+      line-height: 1.55;
+      border-bottom: 1px solid var(--border);
+    }
+    .bab-list li:last-child { border-bottom: none; }
+    .bab-list li::before { content: none; }
+    .bab-list.is-bridge li::before { content: none; }
+
+    /* === BUILD - 2x2 GRID === */
+    .build-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 2.5rem;
+    }
+    .build-item {
+      background: var(--bg); padding: 2.25rem 2rem;
+      border-left: 3px solid var(--indigo);
+    }
+    .build-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--indigo); margin-bottom: 0.875rem;
+    }
+    .build-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.0625rem; font-weight: 700;
+      color: var(--text); margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+    .build-desc {
+      font-size: 1rem; color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .quote-bar {
+      border-left: 3px solid var(--gold);
+      padding: 1.125rem 1.5rem;
+      margin-top: 2.5rem;
+      background: var(--gold-dim);
+    }
+    .quote-bar p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-style: italic;
+      color: var(--text); margin: 0; line-height: 1.65;
+    }
+
+    /* === PRODUITS - 2x2 CARDS === */
+    .products-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 2.5rem;
+    }
+    .product-card {
+      background: var(--bg); padding: 2.25rem 2rem;
+      transition: background 0.15s;
+    }
+    .product-card:hover { background: var(--surface); }
+    .product-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.125rem; font-weight: 700;
+      color: var(--text); margin-bottom: 0.625rem;
+    }
+    .product-desc {
+      font-size: 1rem; color: var(--text-muted);
+      line-height: 1.75; margin-bottom: 1rem;
+    }
+    .product-badge {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.225rem 0.625rem;
+      border: 1px solid var(--indigo);
+      color: var(--indigo); border-radius: 2px;
+      background: var(--indigo-dim);
+    }
+
+    /* === FORMATION - TIMELINE === */
+    .timeline {
+      display: flex; flex-direction: column;
+      gap: 0; margin-top: 2.5rem;
+    }
+    .tl-item {
+      display: flex; gap: 1.5rem;
+      padding-bottom: 2.5rem; position: relative;
+    }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-item:not(:last-child)::before {
+      content: ''; position: absolute;
+      left: 17px; top: 40px; bottom: 0;
+      width: 1px; background: var(--border-bright);
+    }
+    .tl-dot {
+      width: 36px; height: 36px; flex-shrink: 0;
+      border: 2px solid var(--indigo);
+      background: var(--bg); border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem; font-weight: 700; color: var(--indigo);
+    }
+    .tl-body { flex: 1; padding-top: 4px; }
+    .tl-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.0625rem; font-weight: 700;
+      color: var(--text); margin-bottom: 0.375rem;
+    }
+    .tl-desc {
+      font-size: 1rem; color: var(--text-muted); line-height: 1.75;
+    }
+
+    /* === AGENCY - PIPELINE === */
+    .pipeline {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0; margin-top: 2.5rem; position: relative;
+    }
+    .pipeline::before {
+      content: ''; position: absolute;
+      top: 18px; left: 9%; right: 9%; height: 1px;
+      background: var(--border-bright); z-index: 0;
+    }
+    .pipe-step {
+      padding: 0 1rem; text-align: center;
+      position: relative; z-index: 1;
+    }
+    .pipe-num {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 2px solid var(--border-bright);
+      background: var(--bg); margin: 0 auto 1rem;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem; font-weight: 700; color: var(--text-dim);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .pipe-step:hover .pipe-num { border-color: var(--indigo); color: var(--indigo); }
+    .pipe-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9375rem; font-weight: 700;
+      color: var(--text); margin-bottom: 0.5rem;
+    }
+    .pipe-price {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem; color: var(--gold);
+      font-weight: 700; margin-bottom: 0.5rem;
+      letter-spacing: 0.04em;
+    }
+    .pipe-desc {
+      font-size: 0.9375rem; color: var(--text-muted); line-height: 1.65;
+    }
+    .icp-card {
+      margin-top: 2.5rem; padding: 1.5rem 1.75rem;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--indigo);
+      background: var(--indigo-dim);
+    }
+    .icp-card p {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.82rem; color: var(--text-muted);
+      margin: 0; letter-spacing: 0.02em; line-height: 1.65;
+    }
+
+    /* === BUILD IN PUBLIC === */
+    .bip-body {
+      max-width: 680px; margin-top: 2rem;
+    }
+    .bip-body p {
+      font-size: 1.0625rem; color: var(--text-muted); line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+    .bip-link {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.82rem; color: var(--indigo);
+      text-decoration: underline; text-underline-offset: 3px;
+      letter-spacing: 0.04em;
+    }
+
+    /* === FOOTER CTA === */
+    .footer-cta {
+      padding: 7rem 2.5rem 5rem; text-align: center;
+      max-width: 760px; margin: 0 auto;
+    }
+    .footer-quote {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3.25rem);
+      font-weight: 700; color: var(--text);
+      letter-spacing: -0.03em; line-height: 1.05;
+      margin-bottom: 1.125rem;
+    }
+    .footer-sub {
+      font-size: 1.0625rem; color: var(--text-muted);
+      line-height: 1.7; margin-bottom: 2.75rem;
+      max-width: 540px; margin-left: auto; margin-right: auto;
+    }
+    .footer-btn {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.875rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      background: var(--gold); color: var(--text);
+      padding: 1rem 2.5rem; border-radius: 3px;
+      text-decoration: none; transition: opacity 0.15s;
+      margin-bottom: 1.25rem;
+      width: fit-content; margin-left: auto; margin-right: auto;
+    }
+    .footer-btn:hover { opacity: 0.82; }
+    .footer-link {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem; color: var(--text-dim);
+      text-decoration: underline; text-underline-offset: 3px;
+      margin-bottom: 3rem;
+    }
+    .footer-meta {
+      border-top: 1px solid var(--border); padding-top: 2rem;
+    }
+    .footer-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 700; color: var(--text);
+      margin-bottom: 0.375rem; letter-spacing: -0.01em;
+    }
+    .footer-credits {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem; color: var(--text-dim);
+      letter-spacing: 0.06em;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 900px) {
+      .hero-section { padding: 4rem 1.5rem; }
+      .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-right { order: -1; max-width: 320px; }
+      .bab-grid, .products-grid { grid-template-columns: 1fr; }
+      .build-grid { grid-template-columns: 1fr; }
+      .pipeline { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+      .pipeline::before { display: none; }
+      .section-wrap { padding: 4rem 1.5rem; }
+      .nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 480px) {
+      .pipeline { grid-template-columns: 1fr; }
+      .hero-name { font-size: 2.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progress"></div>
+
+  <nav class="nav">
+    <a class="nav-brand" href="#hero">MehdiBuilds</a>
+    <div class="nav-links">
+      <a href="#qui">QUI</a>
+      <a href="#build">BUILD</a>
+      <a href="#produits">PRODUITS</a>
+      <a href="#formation">FORMATION</a>
+      <a href="#agency">AGENCY</a>
+      <a href="#bip">BUILD IN PUBLIC</a>
+    </div>
+    <a class="nav-cta" href="https://calendly.com/mehdibuilds" target="_blank" rel="noopener">Audit gratuit</a>
+  </nav>
+
+  <div class="page-body">
+
+    <!-- HERO -->
+    <section id="hero" style="border-bottom:1px solid var(--border);">
+      <div class="hero-section">
+        <div class="hero-grid reveal">
+          <div class="hero-left">
+            <div class="hero-eyebrow">BUILDER IA &middot; 2026</div>
+            <div class="hero-name">@MehdiBuilds,</div>
+            <h1 class="hero-tagline-italic">builder IA par méthode.</h1>
+            <p class="hero-body">
+              Sales et ops de formation. Je systématise ce qui fait gagner de l'argent
+              et libère du temps : infrastructure, process, outils.
+            </p>
+            <div class="hero-btns">
+              <a class="btn-gold" href="https://calendly.com/mehdibuilds" target="_blank" rel="noopener">Audit gratuit</a>
+              <a class="btn-text-indigo" href="#build">Voir le build</a>
+            </div>
+            <div class="hero-badges">
+              <span class="hero-badge">STACK SOUVERAINE</span>
+              <span class="hero-badge">RGPD-NATIVE</span>
+            </div>
+          </div>
+          <div class="hero-right">
+            <div class="hero-photo-wrap">
+              <img class="hero-photo"
+                   src="assets/mehdi-portrait.jpg"
+                   alt="@MehdiBuilds"
+                   width="400" height="400">
+              <div class="hero-photo-caption">@MehdiBuilds &middot; Paris &middot; 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUI -->
+    <section id="qui">
+      <div class="section-wrap">
+        <div class="section-h reveal">
+          <div class="section-label">01 / QUI</div>
+          <h2 class="section-title">Sales et ops. Builder IA par méthode.</h2>
+          <div class="section-sub-mono">Formation &rarr; Systèmes &rarr; Résultats mesurables</div>
+        </div>
+        <div class="bab-grid reveal">
+          <div class="bab-card">
+            <div class="bab-card-label">AVANT</div>
+            <div class="bab-card-title">Sales + Ops 15 ans</div>
+            <ul class="bab-list">
+              <li>Structures sales, CRM, process</li>
+              <li>Reporting, automation manuelle</li>
+              <li>Je savais ce qui fonctionnait. Pas comment le scaler.</li>
+            </ul>
+          </div>
+          <div class="bab-card">
+            <div class="bab-card-label is-bridge">PONT</div>
+            <div class="bab-card-title">Claude Code + VPS self-hosted</div>
+            <ul class="bab-list is-bridge">
+              <li>Stack souveraine, pas de SaaS US</li>
+              <li>Agents autonomes 24/7</li>
+              <li>L'IA exécute. Moi je décide.</li>
+            </ul>
+          </div>
+          <div class="bab-card">
+            <div class="bab-card-label">APRÈS</div>
+            <div class="bab-card-title">4 agents IA en parallèle</div>
+            <ul class="bab-list">
+              <li>Pipeline prospection automatisée</li>
+              <li>Supervision TUI</li>
+              <li>Chaque heure investie une fois tourne en continu.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILD -->
+    <section id="build">
+      <div class="section-wrap">
+        <div class="section-h reveal">
+          <div class="section-label">02 / BUILD</div>
+          <h2 class="section-title">VPS self-hosted. Agents 24/7. Zero SaaS US.</h2>
+          <div class="section-sub-mono">Hermes Gateway &middot; Hostinger &middot; Telegram</div>
+        </div>
+        <div class="build-grid reveal">
+          <div class="build-item">
+            <div class="build-num">01</div>
+            <div class="build-title">VPS Hostinger self-hosted</div>
+            <div class="build-desc">Hermes Gateway v2026.5.7 - provider Claude via OAuth PKCE natif, fallback Gemini. Souverain, RGPD-native, aucune donnée client chez un tiers US.</div>
+          </div>
+          <div class="build-item">
+            <div class="build-num">02</div>
+            <div class="build-title">Agent SDR 24/7</div>
+            <div class="build-desc">Prospection autonome en continu. find, qualify, outreach, sequence. Relances 4 touches sur 14 jours. Scoring B2B automatique.</div>
+          </div>
+          <div class="build-item">
+            <div class="build-num">03</div>
+            <div class="build-title">Pipeline prospection</div>
+            <div class="build-desc">8 skills Claude Code : fs-find, fs-qualify, fs-outreach, fs-sequence, fs-prep, fs-debrief, fs-offer, fs-icp. Chaque skill est un livrable réutilisable.</div>
+          </div>
+          <div class="build-item">
+            <div class="build-num">04</div>
+            <div class="build-title">TUI Supervision</div>
+            <div class="build-desc">@VibeCraftAgent bot. Alertes, contrôle, rapports en temps réel. Interface opérateur depuis le téléphone, zéro dashboard.</div>
+          </div>
+        </div>
+        <div class="quote-bar reveal">
+          <p>Tout ce que je déploie chez un client, je l'ai d'abord validé sur ma propre acquisition.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUITS -->
+    <section id="produits">
+      <div class="section-wrap">
+        <div class="section-h reveal">
+          <div class="section-label">03 / PRODUITS</div>
+          <h2 class="section-title">Kits IA en production.</h2>
+          <div class="section-subtitle">Une fois achetés, ils tournent, c'est tout.</div>
+        </div>
+        <div class="products-grid reveal">
+          <div class="product-card">
+            <h3 class="product-name">FounderSales</h3>
+            <div class="product-desc">Kit SDR complet pour founders. 8 skills Claude Code prêts à l'emploi : find, qualify, outreach, sequence, prep, debrief, offer, ICP. Opérationnel en 30 minutes.</div>
+            <span class="product-badge">En production</span>
+          </div>
+          <div class="product-card">
+            <h3 class="product-name">MarketingPilot</h3>
+            <div class="product-desc">Automation marketing GTM. Workflows content, repurpose multi-canal, SEO géo-cible, lead magnets. Actionnable en 1 journée. Testé sur l'acquisition VibeCraft.</div>
+            <span class="product-badge">En production</span>
+          </div>
+          <div class="product-card">
+            <h3 class="product-name">GrowthPilot</h3>
+            <div class="product-desc">Growth automation stack. Pipeline complet : veille concurrentielle, content, nurturing, churn radar. IA-native, RGPD-compatible, local-first.</div>
+            <span class="product-badge">En production</span>
+          </div>
+          <div class="product-card">
+            <h3 class="product-name">score-leads.py</h3>
+            <div class="product-desc">Script autonome de qualification B2B. Input CSV, output scores et priorités. Open source. Utilisé sur tous les pipelines VibeCraft.</div>
+            <span class="product-badge">En production</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMATION -->
+    <section id="formation">
+      <div class="section-wrap">
+        <div class="section-h reveal">
+          <div class="section-label">04 / FORMATION</div>
+          <h2 class="section-title">Deviens entrepreneur ou scale ton business avec l'IA.</h2>
+        </div>
+        <div class="timeline reveal">
+          <div class="tl-item">
+            <div class="tl-dot">01</div>
+            <div class="tl-body">
+              <div class="tl-title">Comprendre l'écosystème</div>
+              <div class="tl-desc">Claude Code, agents, MCP, orchestration - les bases sans jargon technique.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">02</div>
+            <div class="tl-body">
+              <div class="tl-title">Builder son premier agent</div>
+              <div class="tl-desc">Premier agent SDR ou content opérationnel en 2 sessions.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">03</div>
+            <div class="tl-body">
+              <div class="tl-title">Déployer sur VPS</div>
+              <div class="tl-desc">Self-hosting, Hermes gateway, supervision TUI.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">04</div>
+            <div class="tl-body">
+              <div class="tl-title">Scaler et monétiser</div>
+              <div class="tl-desc">Stack complète, produits Gumroad, offre Agency - revenus récurrents.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGENCY -->
+    <section id="agency">
+      <div class="section-wrap">
+        <div class="section-h reveal">
+          <div class="section-label">05 / AGENCY</div>
+          <h2 class="section-title">VibeCraft Agency.</h2>
+          <div class="section-subtitle">Livrables concrets. Pas de SaaS.</div>
+        </div>
+        <div class="pipeline reveal">
+          <div class="pipe-step">
+            <div class="pipe-num">01</div>
+            <div class="pipe-price">290 EUR</div>
+            <h3 class="pipe-title">Audit Stack IA</h3>
+            <div class="pipe-desc">1h · Rapport complet + 1 workflow d'automatisation en production. Livré sous 48h.</div>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-num">02</div>
+            <h3 class="pipe-title">Rapports IA</h3>
+            <div class="pipe-desc">Veille concurrentielle, performance, insights marché - générés par agents chaque semaine.</div>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-num">03</div>
+            <h3 class="pipe-title">Funnel System</h3>
+            <div class="pipe-desc">Lead gen, nurturing, qualification, conversion - système GTM complet IA-driven.</div>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-num">04</div>
+            <h3 class="pipe-title">Workflows GTM IA</h3>
+            <div class="pipe-desc">Outreach, content, SDR, ops - automatisés et actifs.</div>
+          </div>
+        </div>
+        <div class="icp-card reveal">
+          <p>Founders freelances et TPE/PME françaises &middot; Budget 79-499 EUR &middot; RGPD-native &middot; Stack locale-first</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILD IN PUBLIC -->
+    <section id="bip">
+      <div class="section-wrap">
+        <div class="section-h reveal">
+          <div class="section-label">06 / BUILD IN PUBLIC</div>
+          <h2 class="section-title">@MehdiBuilds sur X.</h2>
+          <div class="section-sub-mono">Process, stack, résultats réels. Pas de contenu théorique.</div>
+        </div>
+        <div class="bip-body reveal">
+          <p>
+            Tout ce qui fonctionne est partagé. Les systèmes qui tournent, les outils testés en production,
+            les échecs et les pivots. La veille IA francophone B2B.
+          </p>
+          <p>
+            1 post = 1 système ou 1 apprentissage concret. Engineering mindset, zéro bullshit marketing.
+          </p>
+          <a class="bip-link" href="https://x.com/MehdiBuilds">Rejoindre @MehdiBuilds sur X</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER CTA -->
+    <section id="contact">
+      <div class="footer-cta reveal">
+        <div class="footer-quote">Audit gratuit 30 min.</div>
+        <p class="footer-sub">
+          Diagnostic stack + 3 leviers d'automatisation actionnables.<br>
+          Sans engagement. Livré en 48h.
+        </p>
+        <a class="footer-btn" href="https://calendly.com/mehdibuilds" target="_blank" rel="noopener">
+          Réserver l'audit
+        </a>
+        <a class="footer-link" href="https://x.com/MehdiBuilds">Ou via X : @MehdiBuilds</a>
+        <div class="footer-meta">
+          <div class="footer-brand">MehdiBuilds</div>
+          <div class="footer-credits">@VibeCraftAgent &middot; @MehdiBuilds &middot; vibecraft.ai &middot; 2026</div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /page-body -->
+
+  <script>
+    // Reveal on scroll
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Scroll progress
+    const prog = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+      const total = document.body.scrollHeight - window.innerHeight;
+      prog.style.width = (total > 0 ? (window.scrollY / total) * 100 : 0) + '%';
+    }, { passive: true });
+
+    // Active nav links
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove('active'));
+          const active = document.querySelector('.nav-links a[href="#' + e.target.id + '"]');
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-56px 0px -60% 0px', threshold: 0 });
+    sections.forEach(s => io.observe(s));
+  </script>
+
+</body>
+</html>
