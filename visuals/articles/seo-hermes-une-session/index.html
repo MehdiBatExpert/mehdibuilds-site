@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comment j'ai audité et fixé le SEO de ma page de présentation en une session - MehdiBuilds</title>
+  <meta name="description" content="Zéro meta tags, zéro schema, heading hierarchy cassée. Diagnostic complet + fix en production avec Claude Code et Hermes en une seule session." />
+  <link rel="canonical" href="https://mehdibuilds.pages.dev/articles/seo-hermes-une-session/" />
+  <meta property="og:type"        content="article" />
+  <meta property="og:url"         content="https://mehdibuilds.pages.dev/articles/seo-hermes-une-session/" />
+  <meta property="og:title"       content="Comment j'ai audité et fixé le SEO de ma page de présentation en une session" />
+  <meta property="og:description" content="Zéro meta tags, zéro schema, heading hierarchy cassée. Diagnostic complet + fix en production avec Claude Code et Hermes." />
+  <meta property="og:site_name"   content="MehdiBuilds" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@MehdiBuilds" />
+  <meta name="twitter:creator"     content="@MehdiBuilds" />
+  <meta name="twitter:title"       content="Comment j'ai audité et fixé le SEO de ma page de présentation en une session" />
+  <meta name="twitter:description" content="Zéro meta tags, zéro schema, heading hierarchy cassée. Fix en production avec Claude Code et Hermes." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Comment j'ai audité et fixé le SEO de ma page de présentation en une session",
+    "description": "Zéro meta tags, zéro schema, heading hierarchy cassée. Diagnostic complet + fix en production avec Claude Code et Hermes en une seule session.",
+    "url": "https://mehdibuilds.pages.dev/articles/seo-hermes-une-session/",
+    "datePublished": "2026-05-28",
+    "dateModified": "2026-05-28",
+    "author": {
+      "@type": "Person",
+      "name": "MehdiBuilds",
+      "url": "https://mehdibuilds.pages.dev",
+      "sameAs": ["https://x.com/MehdiBuilds"]
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "MehdiBuilds",
+      "url": "https://mehdibuilds.pages.dev"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://mehdibuilds.pages.dev/articles/seo-hermes-une-session/"
+    },
+    "keywords": ["SEO", "Claude Code", "agents IA", "Hermes", "VibeCraft", "automatisation", "single-file HTML"],
+    "inLanguage": "fr-FR",
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "MehdiBuilds Articles",
+      "url": "https://mehdibuilds.pages.dev/articles/"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:            #F8F6F2;
+      --surface:       #EFECE6;
+      --surface2:      #E7E3DC;
+      --border:        #DDD8CF;
+      --border-bright: #CAC4BB;
+      --text:          #0A0C0F;
+      --text-muted:    #2E4157;
+      --text-dim:      #7A7670;
+      --indigo:        #3B4FD8;
+      --indigo-dim:    rgba(59,79,216,0.08);
+      --gold:          #AA8508;
+      --gold-dim:      rgba(170,133,8,0.10);
+      --shadow:        0 2px 12px rgba(0,0,0,0.07);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(248,246,242,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2.5rem;
+    }
+    .nav-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 800;
+      color: var(--text); letter-spacing: -0.02em;
+    }
+    .nav-back {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.64rem; font-weight: 500;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      color: var(--text-dim);
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: color 0.15s;
+    }
+    .nav-back:hover { color: var(--indigo); }
+    .nav-cta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      background: #0A0C0F; color: #F3EFE7;
+      padding: 0.5rem 1.125rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { opacity: 0.80; }
+
+    /* PROGRESS */
+    #progress { position: fixed; top: 0; left: 0; height: 2px; background: var(--gold); width: 0%; z-index: 200; transition: width 0.08s linear; }
+
+    /* LAYOUT */
+    .page-body { padding-top: 64px; }
+    .article-wrap {
+      max-width: 700px; margin: 0 auto;
+      padding: 5rem 2.5rem 7rem;
+    }
+
+    /* ARTICLE HEADER */
+    .article-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+    }
+    .article-tag {
+      color: var(--indigo);
+    }
+    .article-h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.75rem, 4vw, 2.625rem);
+      font-weight: 700; color: var(--text);
+      letter-spacing: -0.03em; line-height: 1.08;
+      margin-bottom: 1.5rem;
+    }
+    .article-lede {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.0625rem, 2.5vw, 1.25rem);
+      font-style: italic; font-weight: 500;
+      color: var(--gold); line-height: 1.6;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* BODY */
+    .article-body { counter-reset: section; }
+    .article-body h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--text); letter-spacing: -0.02em;
+      line-height: 1.2; margin: 3rem 0 1rem;
+    }
+    .article-body h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--text); margin: 2rem 0 0.625rem;
+    }
+    .article-body p {
+      font-size: 1.0625rem; color: var(--text-muted);
+      line-height: 1.8; margin-bottom: 1.25rem;
+    }
+    .article-body ul, .article-body ol {
+      margin: 0 0 1.25rem 1.25rem;
+    }
+    .article-body li {
+      font-size: 1.0625rem; color: var(--text-muted);
+      line-height: 1.75; margin-bottom: 0.375rem;
+    }
+    .article-body strong {
+      font-weight: 700; color: var(--text);
+    }
+    .article-body code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.875rem; background: var(--surface2);
+      padding: 0.15rem 0.45rem; border-radius: 3px;
+      color: var(--text);
+    }
+    .article-body pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--indigo);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+      border-radius: 0 3px 3px 0;
+    }
+    .article-body pre code {
+      background: none; padding: 0;
+      font-size: 0.82rem; color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* CALLOUT */
+    .callout {
+      border-left: 3px solid var(--gold);
+      background: var(--gold-dim);
+      padding: 1.125rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .callout p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9375rem; color: var(--text);
+      margin: 0; line-height: 1.65;
+    }
+    .callout-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.5rem;
+    }
+
+    /* CHECKLIST */
+    .checklist {
+      list-style: none; padding: 0; margin: 1.25rem 0;
+      border: 1px solid var(--border);
+    }
+    .checklist li {
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 1rem; color: var(--text-muted);
+      display: flex; align-items: flex-start; gap: 0.75rem;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before {
+      content: '✗';
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem; font-weight: 700;
+      color: var(--text-dim); flex-shrink: 0; margin-top: 2px;
+    }
+    .checklist li.ok::before { content: '✓'; color: var(--gold); }
+
+    /* FOOTER */
+    .article-footer {
+      margin-top: 4rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .author-block {
+      display: flex; align-items: flex-start; gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .author-info {}
+    .author-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 700; color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+    .author-desc {
+      font-size: 0.9375rem; color: var(--text-muted); line-height: 1.65;
+    }
+    .author-link {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem; color: var(--indigo);
+      text-decoration: underline; text-underline-offset: 3px;
+      letter-spacing: 0.04em;
+    }
+    .cta-block {
+      padding: 2rem;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--indigo);
+      background: var(--indigo-dim);
+      text-align: center;
+    }
+    .cta-block p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.125rem; font-weight: 700;
+      color: var(--text); margin-bottom: 1rem; line-height: 1.4;
+    }
+    .cta-btn {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      background: var(--gold); color: var(--text);
+      padding: 0.75rem 1.75rem; border-radius: 3px;
+      transition: opacity 0.15s;
+    }
+    .cta-btn:hover { opacity: 0.82; }
+    .page-nav {
+      margin-top: 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .page-nav a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem; color: var(--text-dim);
+      letter-spacing: 0.06em; text-transform: uppercase;
+      text-decoration: underline; text-underline-offset: 3px;
+      transition: color 0.15s;
+    }
+    .page-nav a:hover { color: var(--indigo); }
+
+    @media (max-width: 600px) {
+      .nav { padding: 0 1.25rem; }
+      .article-wrap { padding: 4rem 1.25rem 5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progress"></div>
+
+  <nav class="nav">
+    <a class="nav-brand" href="/">MehdiBuilds</a>
+    <a class="nav-back" href="/articles/">&#8592; Articles</a>
+    <a class="nav-cta" href="https://calendly.com/mehdibuilds" target="_blank" rel="noopener">Audit gratuit</a>
+  </nav>
+
+  <div class="page-body">
+    <article class="article-wrap">
+
+      <header>
+        <div class="article-meta">
+          <span>28 mai 2026</span>
+          <span class="article-tag">SEO</span>
+          <span>8 min</span>
+        </div>
+        <h1 class="article-h1">Comment j'ai audité et fixé le SEO de ma page de présentation en une session</h1>
+        <p class="article-lede">
+          Ma page tournait sur Cloudflare Pages depuis quelques jours. Zéro meta tags, zéro schema, heading hierarchy cassée. Voici le diagnostic complet et le fix en production - une session, Claude Code, Hermes.
+        </p>
+      </header>
+
+      <div class="article-body">
+
+        <h2>Le problème : une page invisible pour Google</h2>
+
+        <p>
+          J'avais déployé <code>mehdibuilds.pages.dev</code> après plusieurs sessions de design - palette, typographie, structure, contenu. Le résultat était visuellement propre. Mais côté SEO, la page était nue.
+        </p>
+
+        <p>
+          Audit rapide : voici ce qui manquait.
+        </p>
+
+        <ul class="checklist">
+          <li>Pas de <code>&lt;meta name="description"&gt;</code></li>
+          <li>Pas de balise <code>canonical</code></li>
+          <li>Pas de tags Open Graph (partage sur X, LinkedIn : lien brut sans preview)</li>
+          <li>Pas de Twitter Card</li>
+          <li>Pas de JSON-LD Schema.org</li>
+          <li>Heading hierarchy cassée : plusieurs <code>&lt;div class="section-title"&gt;</code> au lieu de <code>&lt;h2&gt;</code></li>
+          <li>Pas de <code>&lt;h1&gt;</code> du tout dans le DOM</li>
+          <li>Doublon silencieux : <code>index.html</code> et <code>mehdi-builds-pitch.html</code> - deux versions désynchronisées</li>
+        </ul>
+
+        <p>
+          Chaque point seul n'est pas bloquant. Ensemble, ils signalent à Google une page non structurée, non identifiable, sans contexte social. Résultat : pas d'indexation propre, pas de rich snippets, partages sociaux sans aperçu.
+        </p>
+
+        <div class="callout">
+          <div class="callout-label">Contexte</div>
+          <p>La page est un single-file HTML - pas de framework, pas de build step, pas de Next.js. Tout le SEO est donc injecté directement dans le <code>&lt;head&gt;</code> du fichier.</p>
+        </div>
+
+        <h2>TÂCHE 1 : Injection du head SEO complet</h2>
+
+        <p>
+          La première étape était mécanique mais critique : injecter tous les blocs manquants en tête de fichier.
+        </p>
+
+        <h3>Canonical + meta description</h3>
+        <p>
+          Une seule URL canonique pour éviter le duplicate content si la page est un jour accessible via plusieurs chemins. La meta description est le premier texte visible dans les SERPs - 155 caractères max, mot-clé principal en premier.
+        </p>
+
+        <pre><code>&lt;meta name="description" content="Builder IA par méthode. Agents autonomes,
+stack souveraine RGPD-native, prospection B2B automatisée. Paris 2026." /&gt;
+&lt;link rel="canonical" href="https://mehdibuilds.pages.dev/" /&gt;</code></pre>
+
+        <h3>Open Graph + Twitter Card</h3>
+        <p>
+          Sans ces balises, un lien partagé sur X ou LinkedIn affiche juste l'URL. Avec, il affiche titre, description et image. Pour une page personnelle, c'est la différence entre un lien mort et un vrai signal de crédibilité.
+        </p>
+
+        <pre><code>&lt;meta property="og:type"        content="website" /&gt;
+&lt;meta property="og:url"         content="https://mehdibuilds.pages.dev/" /&gt;
+&lt;meta property="og:title"       content="MehdiBuilds - Agent IA &amp; automatisation B2B" /&gt;
+&lt;meta property="og:description" content="Builder IA par méthode..." /&gt;
+&lt;meta name="twitter:card"       content="summary_large_image" /&gt;
+&lt;meta name="twitter:creator"    content="@MehdiBuilds" /&gt;</code></pre>
+
+        <h3>JSON-LD Schema.org : Person + WebSite</h3>
+        <p>
+          Le schema JSON-LD est la pièce la plus sous-estimée. Il donne à Google une description structurée de l'entité - qui je suis, ce que je fais, mes liens sociaux. C'est ce qui permet les rich results dans les SERPs sur une requête de nom propre.
+        </p>
+
+        <pre><code>{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "MehdiBuilds",
+  "url": "https://mehdibuilds.pages.dev",
+  "jobTitle": "Builder IA - VibeCraft Agency",
+  "sameAs": ["https://x.com/MehdiBuilds", "https://x.com/VibeCraftAgent"],
+  "knowsAbout": ["Agents IA", "Automatisation B2B", "Claude Code", "Stack souveraine RGPD"]
+}</code></pre>
+
+        <h2>TÂCHE 2 : Restructuration sémantique H1 / H2 / H3</h2>
+
+        <p>
+          Une page HTML bien structurée a une hiérarchie de titres cohérente : un seul <code>&lt;h1&gt;</code>, des <code>&lt;h2&gt;</code> pour chaque section, des <code>&lt;h3&gt;</code> pour les sous-éléments. C'est un signal de structure pour Google, mais aussi pour les lecteurs d'écran.
+        </p>
+
+        <p>
+          Sur ma page, tous les titres de section étaient des <code>&lt;div&gt;</code> avec une classe CSS. Visuellement identiques, sémantiquement muets.
+        </p>
+
+        <h3>Le H1 : la tagline, pas le nom</h3>
+        <p>
+          Choix stratégique : le <code>&lt;h1&gt;</code> porte la tagline <strong>"builder IA par méthode."</strong> - pas le nom de marque. Raison : le nom @MehdiBuilds est déjà dans la balise <code>&lt;title&gt;</code>, le schema Person et l'URL. Le H1 doit cibler un mot-clé sémantique, pas répéter une identité déjà signalée.
+        </p>
+
+        <h3>6 H2, 8 H3</h3>
+        <p>
+          Un <code>&lt;h2&gt;</code> par section principale (QUI, BUILD, PRODUITS, FORMATION, AGENCY, BUILD IN PUBLIC). Un <code>&lt;h3&gt;</code> par carte produit (FounderSales, MarketingPilot, GrowthPilot, score-leads.py) et par étape Agency (Audit Stack IA, Rapports IA, Funnel System, Workflows GTM IA).
+        </p>
+
+        <p>
+          Le changement est purement dans le markup. Le rendu visuel reste identique - le style CSS reste accroché à la classe, pas à la balise.
+        </p>
+
+        <h2>TÂCHE 3 : Fix du doublon silencieux</h2>
+
+        <p>
+          Problème découvert en fin de session : deux fichiers coexistaient dans le répertoire de déploiement - <code>index.html</code> et <code>mehdi-builds-pitch.html</code>. Cloudflare Pages sert <code>index.html</code> par défaut. Or, <code>index.html</code> était une version antérieure, avant toutes les corrections.
+        </p>
+
+        <p>
+          Tout le travail SEO et sémantique était donc dans <code>mehdi-builds-pitch.html</code>, invisible en production.
+        </p>
+
+        <p>
+          Fix : copier <code>mehdi-builds-pitch.html</code> vers <code>index.html</code>, supprimer le doublon. Un seul fichier, une seule source de vérité.
+        </p>
+
+        <div class="callout">
+          <div class="callout-label">Leçon retenue</div>
+          <p>Un déploiement sans vérifier quel fichier est réellement servi, c'est du travail qui disparaît en silence. Toujours inspecter l'URL de prod après chaque push.</p>
+        </div>
+
+        <h2>Résultat : ce que la page signale maintenant</h2>
+
+        <ul class="checklist">
+          <li class="ok">Meta description + canonical</li>
+          <li class="ok">Open Graph complet - previews sur X et LinkedIn</li>
+          <li class="ok">Twitter Card summary_large_image</li>
+          <li class="ok">JSON-LD Person + WebSite - rich results potentiels sur requête de marque</li>
+          <li class="ok">Un seul H1 sémantique sur le mot-clé principal</li>
+          <li class="ok">6 H2 + 8 H3 - hiérarchie complète</li>
+          <li class="ok">Un seul fichier en production - plus de doublon</li>
+        </ul>
+
+        <p>
+          Le tout en un seul fichier HTML statique, sans framework, sans build step, sans plugin. Déployé sur Cloudflare Pages, servi en moins de 50ms depuis le edge.
+        </p>
+
+        <p>
+          Ce qui m'a permis de faire ça vite : Claude Code + Hermes Gateway sur VPS. Je décris le diagnostic, Hermes exécute les patches. Chaque modification est une instruction précise sur un fichier précis - pas de génération magique, pas de réécriture complète. De la chirurgie.
+        </p>
+
+        <p>
+          C'est exactement ce que je déploie chez des clients : des systèmes qui s'exécutent vite, modifiés avec précision, versionnés proprement.
+        </p>
+
+      </div><!-- /article-body -->
+
+      <footer class="article-footer">
+        <div class="author-block">
+          <div class="author-info">
+            <div class="author-name">MehdiBuilds</div>
+            <p class="author-desc">
+              Builder IA. Fondateur VibeCraft Agency. Stack souveraine, agents autonomes, automatisation B2B pour TPE/PME françaises.
+            </p>
+            <a class="author-link" href="https://x.com/MehdiBuilds" target="_blank" rel="noopener">Suivre @MehdiBuilds sur X</a>
+          </div>
+        </div>
+
+        <div class="cta-block">
+          <p>Même diagnostic sur votre stack ?</p>
+          <a class="cta-btn" href="https://calendly.com/mehdibuilds" target="_blank" rel="noopener">Audit gratuit 30 min</a>
+        </div>
+
+        <div class="page-nav">
+          <a href="/articles/">&#8592; Tous les articles</a>
+          <a href="/">Accueil MehdiBuilds</a>
+        </div>
+      </footer>
+
+    </article>
+  </div>
+
+  <script>
+    const prog = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+      const total = document.body.scrollHeight - window.innerHeight;
+      prog.style.width = (total > 0 ? (window.scrollY / total) * 100 : 0) + '%';
+    }, { passive: true });
+  </script>
+
+</body>
+</html>

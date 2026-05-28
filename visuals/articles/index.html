@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Articles - MehdiBuilds</title>
+  <meta name="description" content="Build en public : stack IA, SEO, automatisation B2B. Systèmes réels, résultats mesurables." />
+  <link rel="canonical" href="https://mehdibuilds.pages.dev/articles/" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://mehdibuilds.pages.dev/articles/" />
+  <meta property="og:title"       content="Articles - MehdiBuilds" />
+  <meta property="og:description" content="Build en public : stack IA, SEO, automatisation B2B. Systèmes réels, résultats mesurables." />
+  <meta property="og:site_name"   content="MehdiBuilds" />
+  <meta name="twitter:card"       content="summary" />
+  <meta name="twitter:site"       content="@MehdiBuilds" />
+  <meta name="twitter:title"      content="Articles - MehdiBuilds" />
+  <meta name="twitter:description" content="Build en public : stack IA, SEO, automatisation B2B." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:            #F8F6F2;
+      --surface:       #EFECE6;
+      --surface2:      #E7E3DC;
+      --border:        #DDD8CF;
+      --border-bright: #CAC4BB;
+      --text:          #0A0C0F;
+      --text-muted:    #2E4157;
+      --text-dim:      #7A7670;
+      --indigo:        #3B4FD8;
+      --indigo-dim:    rgba(59,79,216,0.08);
+      --gold:          #AA8508;
+      --gold-dim:      rgba(170,133,8,0.10);
+      --shadow:        0 2px 12px rgba(0,0,0,0.07);
+      --shadow-sm:     0 1px 4px rgba(0,0,0,0.06);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(248,246,242,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2.5rem;
+    }
+    .nav-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 800;
+      color: var(--text); letter-spacing: -0.02em;
+    }
+    .nav-back {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.64rem; font-weight: 500;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      color: var(--text-dim);
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: color 0.15s;
+    }
+    .nav-back:hover { color: var(--indigo); }
+    .nav-cta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      background: #0A0C0F; color: #F3EFE7;
+      padding: 0.5rem 1.125rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { opacity: 0.80; }
+
+    /* PAGE */
+    .page-body { padding-top: 64px; }
+    .page-wrap {
+      max-width: 760px; margin: 0 auto;
+      padding: 5rem 2.5rem 7rem;
+    }
+
+    /* HEADER */
+    .page-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--indigo); margin-bottom: 1.25rem;
+    }
+    .page-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700; color: var(--text);
+      letter-spacing: -0.03em; line-height: 1.05;
+      margin-bottom: 0.75rem;
+    }
+    .page-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.0625rem; color: var(--text-muted);
+      line-height: 1.7; margin-bottom: 3.5rem;
+    }
+
+    /* ARTICLE LIST */
+    .article-list {
+      display: flex; flex-direction: column; gap: 0;
+      border: 1px solid var(--border);
+    }
+    .article-item {
+      display: block; padding: 2rem 2rem;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+      text-decoration: none;
+    }
+    .article-item:last-child { border-bottom: none; }
+    .article-item:hover { background: var(--surface); }
+    .article-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 0.625rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .article-tag {
+      color: var(--indigo);
+    }
+    .article-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.125rem; font-weight: 700;
+      color: var(--text); line-height: 1.3;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.015em;
+    }
+    .article-excerpt {
+      font-size: 0.9375rem; color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .article-arrow {
+      display: inline-block; margin-left: 0.375rem;
+      color: var(--indigo); font-size: 0.875rem;
+      transition: transform 0.15s;
+    }
+    .article-item:hover .article-arrow { transform: translateX(3px); }
+
+    /* FOOTER */
+    .list-footer {
+      margin-top: 4rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem; font-weight: 700; color: var(--text);
+      letter-spacing: -0.01em;
+    }
+    .footer-credits {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem; color: var(--text-dim);
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 600px) {
+      .nav { padding: 0 1.25rem; }
+      .page-wrap { padding: 4rem 1.25rem 5rem; }
+      .article-item { padding: 1.5rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a class="nav-brand" href="/">MehdiBuilds</a>
+    <a class="nav-back" href="/">&#8592; Accueil</a>
+    <a class="nav-cta" href="https://calendly.com/mehdibuilds" target="_blank" rel="noopener">Audit gratuit</a>
+  </nav>
+
+  <div class="page-body">
+    <div class="page-wrap">
+
+      <div class="page-label">Build in public</div>
+      <h1 class="page-title">Articles</h1>
+      <p class="page-sub">Stack IA, SEO, automatisation B2B. Systèmes réels, résultats mesurables.</p>
+
+      <div class="article-list">
+
+        <a class="article-item" href="/articles/seo-hermes-une-session/">
+          <div class="article-meta">
+            <span>28 mai 2026</span>
+            <span class="article-tag">SEO</span>
+          </div>
+          <div class="article-title">
+            Comment j'ai audité et fixé le SEO de ma page de présentation en une session
+            <span class="article-arrow">&#8594;</span>
+          </div>
+          <div class="article-excerpt">
+            Zéro meta tags, zéro schema, heading hierarchy cassée. Diagnostic complet + fix en production avec Claude Code et Hermes.
+          </div>
+        </a>
+
+      </div>
+
+      <div class="list-footer">
+        <div class="footer-brand">MehdiBuilds</div>
+        <div class="footer-credits">@MehdiBuilds &middot; @VibeCraftAgent &middot; 2026</div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
